@@ -12,46 +12,36 @@ public class ArrayValues {
         int[] values = {1, 3, 6, 9, 23, 5, 23, 16, 17, 9, 4, 0};
 
         int maxValue = values[0];
-        maxValue = getMaxValue(values, maxValue);
-        System.out.println(maxValue);
+        System.out.println(getMaxValue(values, maxValue));
 
         int minValue = values[0];
-        minValue = getMinValue(values, minValue);
-        System.out.println(minValue);
+        System.out.println(getMinValue(values, minValue));
 
-        int averageValue;
-        averageValue = getAverageValue(values);
-        System.out.println(averageValue);
+        System.out.println(getAvgValue(values));
     }
 
-    private static int getAverageValue(int[] values) {
-        int averageValue;
+    private static int getAvgValue(int[] values) {
         int sumValues = 0;
         for (int i = 0; i < values.length; i++) {
             sumValues += values[i];
         }
-        averageValue = sumValues / values.length;
-        return averageValue;
+        return sumValues / values.length;
     }
 
     private static int getMinValue(int[] values, int minValue) {
         for (int i = 0; i < values.length; i++) {
-            if (i == 0) {
-                continue;
-            } else if ((values[i] < values[i - 1]) && (values[i] < minValue)) {
+            if (values[i] < minValue) {
                 minValue = values[i];
-            } continue;
+            }
         }
         return minValue;
     }
 
     private static int getMaxValue(int[] values, int maxValue) {
         for (int i = 0; i < values.length; i++) {
-            if (i == 0) {
-                continue;
-            } else if ((values[i] > values[i - 1]) && (values[i] > maxValue)) {
+            if (values[i] > maxValue) {
                 maxValue = values[i];
-            } continue;
+            }
         }
         return maxValue;
     }
