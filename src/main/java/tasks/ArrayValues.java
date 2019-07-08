@@ -40,7 +40,7 @@ public class ArrayValues {
                 continue;
             } else if ((values[i] < values[i - 1]) && (values[i] < minValue)) {
                 minValue = values[i];
-            } else continue;
+            } continue;
         }
         return minValue;
     }
@@ -51,7 +51,7 @@ public class ArrayValues {
                 continue;
             } else if ((values[i] > values[i - 1]) && (values[i] > maxValue)) {
                 maxValue = values[i];
-            } else continue;
+            } continue;
         }
         return maxValue;
     }
