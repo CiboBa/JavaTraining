@@ -15,13 +15,12 @@ public class StudentApp {
     public static void main(String[] args) {
 
         Student student1 = new Student("C.Tevez", "11220976");
-        student1.setEmail();
-        student1.userID();
         student1.enroll("Course 1");
-        student1.pay(500.0);
+        student1.enroll("Course 2");
         student1.checkBalance();
-        student1.toString();
+        System.out.println(student1.toString());
         student1.showCourses();
+
 
     }
 }

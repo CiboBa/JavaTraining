@@ -1,18 +1,26 @@
 package lab2tasks;
 
-public class Student extends StudentAddress {
+public class Student {
 
-    private static String iD = "007";
+    private static int iD = 700;
+    private String userId;
     private String name;
     private String ssn;
     private String email;
-    private double balance = 2000;
+    private int balance = 2000;
+    private String courses = "";
+    private static int courseCost = 800;
 
+    private String phone;
+    private String city;
+    private String state;
 
     Student(String name, String ssn) {
+        iD++;
         this.name = name;
         this.ssn = ssn;
-        System.out.println("Student was added: " + name + " " + ssn);
+        setUserId();
+        setEmail();
     }
 
     public void setName() {
@@ -32,7 +40,7 @@ public class Student extends StudentAddress {
     }
 
     void setEmail() {
-        email = name + "@fake-email.gov";
+        email = name.toLowerCase() + "." + iD + "@fake-email.gov";
         System.out.println("Email: " + email);
     }
 
@@ -40,17 +48,19 @@ public class Student extends StudentAddress {
         return email;
     }
 
-    void userID() {
-        int random = (int) (Math.random() * ((9000 - 1000) + 1));
-        String userID = iD + " " + random + " " + ssn.substring(3, 8);
-        System.out.println("User ID: " + userID);
+    private void setUserId() {
+        int min = 1000;
+        int max = 9000;
+        int random = (int) (Math.random() * ((max - min) + 1));
+        userId = iD + " " + random + " " + ssn.substring(4, 8);
     }
 
     void enroll(String courseName) {
-        System.out.println("You've been enrolled to a course: " + courseName);
+        this.courses = this.courses + "\n" + courseName;
+        pay(courseCost);
     }
 
-    void pay(double amount) {
+    void pay(int amount) {
         System.out.println("Payed: $" + amount);
         balance -= amount;
     }
@@ -61,13 +71,39 @@ public class Student extends StudentAddress {
 
     @Override
     public String toString() {
-        return "[Name: " + name + "] \n" +
+        return "[User ID:" + userId + "]\n" +
+                "[Name: " + name + "] \n" +
                 "[SSN: " + ssn + "]\n" +
                 "[Email: " + email + "]\n" +
-                "[Balance: " + balance + "]";
+                "[Balance: " + balance + "]\n" +
+                "[ID: " + iD + "]";
     }
 
     void showCourses() {
-        System.out.println("-Course 1\n-Course 2\n-Course 3");
+        System.out.println(courses);
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }
