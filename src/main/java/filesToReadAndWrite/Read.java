@@ -1,4 +1,4 @@
-package files;
+package filesToReadAndWrite;
 
 import java.io.*;
 
@@ -9,6 +9,7 @@ public class Read {
     2. Create the file in Java
     3. Open the file
     4. Read the file
+    5. Close the resources
      */
     public static void main(String[] args) {
 
