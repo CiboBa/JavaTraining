@@ -33,7 +33,6 @@ public class PaymentsApp {
                 System.out.println(e.toString());
                 System.out.println("Please try again");
                 positivePayment = false;
-
             }
         } while (!positivePayment);
         System.out.println("Thank you for your payment $" + payment);
