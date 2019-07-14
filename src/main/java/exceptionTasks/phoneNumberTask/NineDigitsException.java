@@ -1,4 +1,4 @@
-package exceptionTasks;
+package exceptionTasks.phoneNumberTask;
 
 public class NineDigitsException extends Exception {
 

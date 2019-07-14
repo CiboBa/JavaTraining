@@ -1,4 +1,4 @@
-package exceptionTasks;
+package exceptionTasks.phoneNumberTask;
 
 import java.io.*;
 
@@ -30,8 +30,8 @@ public class PhoneNumberApp {
             System.out.println("ERROR! Could not read");
         }
 
-        for (int i = 0; i < phoneNumbers.length; i++) {
-            phoneNumber = phoneNumbers[i];
+        for (String number : phoneNumbers) {
+            phoneNumber = number;
             try {
                 if (phoneNumber.length() != 9) {
                     throw new NineDigitsException(phoneNumber);

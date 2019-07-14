@@ -1,4 +1,4 @@
-package exceptionTasks;
+package exceptionTasks.phoneNumberTask;
 
 public class AreaCodeException extends Exception {
 
