@@ -23,9 +23,9 @@ public class PasswordApp {
             System.out.println("ERROR! Could not read the file: " + fileName);
         }
 
-        for (int i = 0; i < passwords.length; i++) {
-            password = passwords[i];
-            System.out.println(password);
+        for (String s : passwords) {
+            password = s;
+            System.out.println("\n" + password);
             try {
                 assert password != null;
                 if (!password.matches(".*\\p{Digit}.*")) {
@@ -37,6 +37,7 @@ public class PasswordApp {
                 if (!password.matches(".*\\p{Punct}.*")) {
                     throw new SpecialCharException(password);
                 }
+                else System.out.println("Password valid!");
             } catch (DigitException e) {
                 System.out.println("ERROR! Password must contain at least one digit");
                 System.out.println(e.toString());
