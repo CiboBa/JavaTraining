@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-public class App {
+public class CcsApp {
 
     /*
     Read a credit card CSV statement
