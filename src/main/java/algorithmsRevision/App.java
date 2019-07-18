@@ -14,5 +14,8 @@ public class App {
         //Call the binary search
         int index = Search.binarySearch(sortedNumbers, 55, 0, sortedNumbers.length - 1);
         System.out.println("Target found at position: " + index);
+
+        //Call the bubble sort
+        Sort.bubbleSort(numbers);
     }
 }
